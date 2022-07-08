@@ -9,7 +9,7 @@ import com.gestion.personajesRM.repositorio.PersonajeRepositorio;
 
 @Service
 
-public class ProductoServicio {
+public class PersonajeServicio {
 
 	@Autowired
 	private PersonajeRepositorio repositorio;

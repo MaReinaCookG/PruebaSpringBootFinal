@@ -1,5 +1,7 @@
 package com.gestion.personajesRM.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -80,7 +82,9 @@ public class PersonajesRM {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+	
+	}
     
 	
 	
-}
