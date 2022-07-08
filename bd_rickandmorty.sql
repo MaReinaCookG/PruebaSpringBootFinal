@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2022 a las 18:04:22
+-- Tiempo de generación: 08-07-2022 a las 22:55:08
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -40,8 +40,11 @@ CREATE TABLE `personajesrm` (
 --
 
 INSERT INTO `personajesrm` (`id`, `gender`, `image`, `name`, `status`) VALUES
-(1, 'male', 'https://rickandmortyapi.com/api/location/1', 'Rick Sanchez', 'alive'),
-(2, 'male', 'https://rickandmortyapi.com/api/location/3', 'Morty Smith', 'Alive');
+(6, 'Female', 'https://rickandmortyapi.com/api/character/avatar/6.jpeg', 'Abadango Cluster Princess', 'Aliveeeee'),
+(2, 'male', 'https://rickandmortyapi.com/api/location/3', 'Morty Smith', 'Alive'),
+(3, 'Female', 'https://rickandmortyapi.com/api/location/20', 'Summer Smith', 'Alive'),
+(4, 'Male', 'https://rickandmortyapi.com/api/location/20', 'Jerry Smith', 'Alive'),
+(5, 'Male', 'https://rickandmortyapi.com/api/location/20', 'Jerry Smith', 'Alive');
 
 --
 -- Índices para tablas volcadas
@@ -61,7 +64,7 @@ ALTER TABLE `personajesrm`
 -- AUTO_INCREMENT de la tabla `personajesrm`
 --
 ALTER TABLE `personajesrm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

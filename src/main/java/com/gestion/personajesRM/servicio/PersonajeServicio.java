@@ -16,12 +16,10 @@ public class PersonajeServicio {
 	
 	public List<PersonajesRM> listarPersonajes(){
 		return repositorio.findAll();
-		
 	}
 	
 	public void guardarPersonajes(PersonajesRM personajes) {
 		repositorio.save(personajes);
-		
 	}
 	
 	public PersonajesRM obtenerPersonajePorId(Integer id) {
@@ -31,4 +29,5 @@ public class PersonajeServicio {
 	public void eliminarPersonaje(Integer id) {
 		repositorio.deleteById(id);
 	}
+	
 }

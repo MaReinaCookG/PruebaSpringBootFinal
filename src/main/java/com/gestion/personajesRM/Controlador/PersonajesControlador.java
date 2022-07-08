@@ -1,4 +1,5 @@
 package com.gestion.personajesRM.Controlador;
+import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gestion.personajesRM.modelo.PersonajesRM;
 import com.gestion.personajesRM.repositorio.PersonajeRepositorio;
 import com.gestion.personajesRM.servicio.PersonajeServicio;
+import com.google.gson.Gson;
+
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class PersonajesControlador {
@@ -28,10 +32,21 @@ public class PersonajesControlador {
 			
 	}
 	
+	@GetMapping("/ObtenerPersonajes")
+	public String obtenerPersonajes(){
+		String uri = "https://rickandmortyapi.com/api/character";
+		RestTemplate restTemplate = new RestTemplate();
+		String result = restTemplate.getForObject(uri, String.class);
+		
+		//Gson gson = new Gson();    
+		//result = gson.toJson(result);
+		
+		return result;
+	}
+	
 	@GetMapping("/Personajes/{id}")
 	public PersonajesRM obtenerProductos(@PathVariable Integer id) {
-	return servicio.obtenerPersonajePorId(id);
-
+		return servicio.obtenerPersonajePorId(id);
 	}
 
 	@PostMapping("/Personajes")
@@ -42,7 +57,6 @@ public class PersonajesControlador {
 	@PutMapping("/Personajes/{id}")
 	public ResponseEntity<?> actualizarPersonaje(@RequestBody PersonajesRM personaje,@PathVariable Integer id){
 		try {
-			//return new ResponseEntity<PersonajesRM> (HttpStatus.OK);
 			PersonajesRM PersonajeExistente = servicio.obtenerPersonajePorId(id);
 			PersonajeExistente.setName(personaje.getName());	
 			PersonajeExistente.setStatus(personaje.getStatus());
